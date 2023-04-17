@@ -42,7 +42,7 @@
         <form class="form">
           <div class="form__value">
             <h2 class="value__title">Valor</h2>
-            <input class="number-input" type="number" name="value" id="value" placeholder="R$  00,00" required>
+            <input onkeydown="javascript: return event.keyCode == 69 ? false : true" class="number-input" type="number" name="value" id="value" placeholder="R$  00,00" required>
           </div>
           <div class="form__type">
             <h2 class="type__title">Tipo de valor</h2>
