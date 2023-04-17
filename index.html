@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -7,20 +7,82 @@
     <title>Control Finance</title>
     <link
       rel="shortcut icon"
-      href="./src/assets/favicon.ico"
+      href="./src/assets/images/favicon.ico"
       type="image/x-icon"
     />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20,400,0,0" />
     <meta
       name="description"
       content="Control Finance - Seu controle financeiro"
     />
+    <link rel="stylesheet" href="./src/styles/reset.css">
     <link rel="stylesheet" href="./src/styles/globalStyles.css" />
     <link rel="stylesheet" href="./src/styles/index.css" />
   </head>
   <body>
-    <main id="app"></main>
-    <script src="./src/scripts/modal.js"></script>
-    <script src="./src/scripts/valuesData.js"></script>
-    <script src="./src/scripts/index.js"></script>
+    <header class="header__container">
+      <div class="header__texts">
+        <h1 class="header__title">
+          <span class="header__title--brand1">Control </span>Finance
+        </h1>
+      </div>
+      <div class="header__buttons">
+        <button class="header__add-button add-button">Registrar novo valor</button>
+      </div>
+    </header>
+    <div class="modal__container modal__container--hiden">
+      <dialog class="modal" open>
+        <header class="modal__header">
+          <div class="modal__header-title">
+            <h2 class="modal__title">Registro de Valor</h2>
+            <button class="close-button close-modal">X</button>
+          </div>
+          <p class="modal__text">Digite o valor e em seguida aperte no botão referente ao tipo do valor</p>
+        </header>
+        <form class="form">
+          <div class="form__value">
+            <h2 class="value__title">Valor</h2>
+            <input class="number-input" type="number" name="value" id="value" placeholder="R$  00,00" required>
+          </div>
+          <div class="form__type">
+            <h2 class="type__title">Tipo de valor</h2>
+            <div class="types">
+              <button class="radio-label label--actived" id="0">Entrada</button>
+              <button class="radio-label" id="1">Saída</button>
+            </div>
+          </div>
+          <div class="form__buttons">
+            <button class="cancel-button close-modal">Cancelar</button>
+            <button type="submit" class="submit-button close-modal">Inserir valor</button>
+          </div>
+        </form>
+      </dialog>
+    </div>
+    <main id="app">
+      <nav class="app__filters">
+        <div class="filters__title">
+          <h2 class="filter-title">Resumo financeiro</h2>
+        </div>
+        <div class="filters__buttons">
+          <button class="filter__button filter__button--actived filter__button--all">Todos</button>
+          <button class="filter__button filter__button--entries">Entradas</button>
+          <button class="filter__button filter__button--exits">Saídas</button>
+        </div>
+      </nav>
+
+      <section class="all-values__container">
+
+      </section>
+
+      <section class="values__container">
+        <ul class="values__list">
+
+        </ul>
+      </section>
+    </main>
+    <script type="module" src="./src/scripts/modal.js" defer></script>
+    <script type="module" src="./src/scripts/valuesData.js" defer></script>
+    <script type="module" src="./src/scripts/render.js" defer></script>
+    <script type="module" src="./src/scripts/index.js" defer></script>
   </body>
 </html>
