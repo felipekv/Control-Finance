@@ -6,6 +6,16 @@
   box-sizing: border-box;
 }
 
+@keyframes moveToCenter {
+  0% {
+    transform: translateY(-700px);
+  }
+  100% {
+    transform: translateY(5%);
+  }
+}
+
+
 :root {
   --color-brand-1: #6741d9;
   --color-brand-2: #4c3299;
@@ -167,6 +177,7 @@ body {
 .delete-button:hover{
   background-color: var(--color-grey-5);
   border-color: var(--color-grey-4);
+  cursor: pointer;
 }
 
 .material-symbols-rounded {
@@ -225,19 +236,21 @@ body {
   color: var(--fixed-white);
 }
 
-.modal__container{
+.modal__container--show{
   width: 100vw;
   height: 100vh;
   background-color: var(--color-grey-1-opacity-5);
   position: fixed;
   z-index: 5;
+  
 }
 
-.modal__container--hiden{
+.modal__container--hidden{
   display: none;
 }
 
 .modal{
+  animation: moveToCenter var(--animation-type) var(--animation-duration);
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;

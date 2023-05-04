@@ -6,7 +6,8 @@ export const openModal = () => {
     const modalTag = document.querySelector(".modal__container")
     addButton.forEach(button => button.addEventListener("click", () => {
 
-        modalTag.classList.remove("modal__container--hiden")
+        modalTag.classList.remove("modal__container--hidden")
+        modalTag.classList.add("modal__container--show")
 
     }))
     typeChanger()
@@ -21,7 +22,8 @@ export const closeModal = () => {
     closeModal.forEach(button => button.addEventListener("click", (event) => {
         event.preventDefault()
 
-        modalTag.classList.add("modal__container--hiden")
+        modalTag.classList.add("modal__container--hidden")
+        modalTag.classList.remove("modal__container--show")
 
     }))
 }
